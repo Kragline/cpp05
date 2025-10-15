@@ -12,73 +12,41 @@ int main()
 
     // ShrubberyCreationForm tests
     std::cout << "\n--- ShrubberyCreationForm Tests ---\n" << std::endl;
-    try
 	{
-        ShrubberyCreationForm	shrub("Garden");
-        highRank.signForm(shrub);
-        shrub.execute(highRank);
-    }
-	catch (std::exception &e)
+		ShrubberyCreationForm	shrub("Garden");
+		highRank.signForm(shrub);
+		highRank.executeForm(shrub);
+	}
 	{
-        std::cout << "ShrubberyCreationForm Exception: " << e.what() << std::endl;
-    }
-    try
-	{
-        ShrubberyCreationForm	shrubFail("FailGarden");
-        lowRank.signForm(shrubFail);
-        shrubFail.execute(lowRank);
-    }
-	catch (std::exception &e)
-	{
-        std::cout << "ShrubberyCreationForm Exception (low rank): " << e.what() << std::endl;
-    }
+		ShrubberyCreationForm	shrubFail("FailGarden");
+		lowRank.signForm(shrubFail);
+		lowRank.executeForm(shrubFail);
+	}
 
     // RobotomyRequestForm tests
     std::cout << "\n--- RobotomyRequestForm Tests ---\n" << std::endl;
-    try
 	{
-        RobotomyRequestForm robot("Bender");
-        highRank.signForm(robot);
-        robot.execute(highRank);
-    }
-	catch (std::exception &e)
+		RobotomyRequestForm robot("Bender");
+		highRank.signForm(robot);
+		highRank.executeForm(robot);
+	}
 	{
-        std::cout << "RobotomyRequestForm Exception: " << e.what() << std::endl;
-    }
-
-    try
-	{
-        RobotomyRequestForm robotFail("FailBot");
-        lowRank.signForm(robotFail);
-        robotFail.execute(lowRank);
-    }
-	catch (std::exception &e)
-	{
-        std::cout << "RobotomyRequestForm Exception (low rank): " << e.what() << std::endl;
-    }
+		RobotomyRequestForm robotFail("FailBot");
+		lowRank.signForm(robotFail);
+		lowRank.executeForm(robotFail);
+	}
 
     // PresidentialPardonForm tests
     std::cout << "\n--- PresidentialPardonForm Tests ---\n" << std::endl;
-    try
 	{
-        PresidentialPardonForm pardon("Alice");
-        highRank.signForm(pardon);
-        pardon.execute(highRank);
-    }
-	catch (std::exception &e)
+		PresidentialPardonForm pardon("Alice");
+		highRank.signForm(pardon);
+		highRank.executeForm(pardon);
+	}
 	{
-        std::cout << "PresidentialPardonForm Exception: " << e.what() << std::endl;
-    }
-    try
-	{
-        PresidentialPardonForm pardonFail("Bob");
-        lowRank.signForm(pardonFail);
-        pardonFail.execute(lowRank);
-    }
-	catch (std::exception &e)
-	{
-        std::cout << "PresidentialPardonForm Exception (low rank): " << e.what() << std::endl;
-    }
-
+		PresidentialPardonForm pardonFail("Bob");
+		lowRank.signForm(pardonFail);
+		lowRank.executeForm(pardonFail);
+	}
     return (0);
 }
