@@ -33,5 +33,21 @@ void	ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 		throw FormNotSigned();
 	if (executor.getGrade() > this->getGradeToExecute())
 		throw GradeTooLowException();
-	// TODO
+	
+	std::ofstream	targetFile((_target + "_shrubbery").c_str());
+	if (!targetFile.is_open())
+		throw std::runtime_error("Couldn't open the target file!");
+	
+	targetFile
+		<< "              ,@@@@@@@,\n"
+			"		,,,.   ,@@@@@@/@@,  .oo8888o.\n"
+			"		,&%%&%&&%,@@@@@/@@@@@@,8888\\88/8o\n"
+			"	,%&\\%&&%&&%,@@@\\@@@/@@@88\\88888/88'\n"
+			"	%&&%&%&/%&&%@@\\@@/ /@@@88888\\88888'\n"
+			"	%&&%/ %&%%&&@@\\ V /@@' `88\\8 `/88'\n"
+			"	`&%\\ ` /%&'    |.|        \\ '|8'\n"
+			"		|o|        | |         | |\n"
+			"		|.|        | |         | |\n"
+			"	jgs \\/ ._\\//_/__/  ,\\_//__\\/.  \\_//__/_" << std::endl;
+	targetFile.close();
 }
